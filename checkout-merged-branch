@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+set -eu
+
+if [ "$CI_INFO_HAS_ASSOCIATED_PR" = "false" ]; then
+  echo "===> There is no pull request associated with this CI" >&2
+  exit 0
+fi
+
+if [ "$CI_INFO_PR_MERGED" = "true" ]; then
+  echo "===> The associated pull request has already been merged" >&2
+  exit 0
+fi
+
+# https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/checking-out-pull-requests-locally
+echo "===> Fetch pull/${CI_INFO_PR_NUMBER}/merge" >&2
+git fetch --depth 1 origin "pull/${CI_INFO_PR_NUMBER}/merge:pr/${CI_INFO_PR_NUMBER}/merge"
+echo "===> Checkout pr/${CI_INFO_PR_NUMBER}/merge" >&2
+git checkout "pr/${CI_INFO_PR_NUMBER}/merge"
