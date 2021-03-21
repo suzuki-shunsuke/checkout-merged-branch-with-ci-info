@@ -1,5 +1,8 @@
 # checkout-merged-branch-with-ci-info
 
+[![GitHub last commit](https://img.shields.io/github/last-commit/suzuki-shunsuke/checkout-merged-branch-with-ci-info.svg)](https://github.com/suzuki-shunsuke/checkout-merged-branch-with-ci-info)
+[![License](http://img.shields.io/badge/license-mit-blue.svg?style=flat-square)](https://raw.githubusercontent.com/suzuki-shunsuke/checkout-merged-branch-with-ci-info/master/LICENSE)
+
 checkout a merged branch
 
 ## Requirement
